@@ -1,0 +1,264 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ */
+
+/**
+ * Colors
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ *
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *   It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *   top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *   on top of it.
+ *
+ *   The soft color must be semi transparent alpha channel. This is crucial
+ *   because it allows adding multiple "soft" colors on top of each other
+ *   to create a accent, such as when having inline code block inside
+ *   custom containers.
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attached to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ * -------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --vp-c-default-1: #e2e2de;
+  --vp-c-default-2: #eeece8;
+  --vp-c-default-3: #f4f3f1;
+  --vp-c-default-soft: #eeece8;
+
+  --vp-c-brand-1: #ea9a52;
+  --vp-c-brand-2: #ebb07a;
+  --vp-c-brand-3: #ea9a52;
+  --vp-c-brand-soft: #ebb07a;
+
+  --vp-c-bg: #e2e2de;
+  --vp-c-bg-alt: #e2e2de;
+  --vp-c-bg-elv: #f4f3f1;
+  --vp-c-bg-soft: #f4f3f1;
+
+  --vp-c-text-1: #807a76;
+  --vp-c-text-2: #958f8b;
+  --vp-c-text-3: #aaa4a0;
+
+  --vp-c-divider: #b9b3af;
+  --vp-c-gutter: transparent;
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+}
+
+.dark {
+  --vp-c-default-1: #2e3440;
+  --vp-c-default-2: #3b4252;
+  --vp-c-default-3: #434c5e;
+  --vp-c-default-soft: #3b4252;
+
+  --vp-c-brand-1: #9ee1ef;
+  --vp-c-brand-2: #88c0d0;
+  --vp-c-brand-3: #55cde8;
+  --vp-c-brand-soft: #88c0d0;
+
+  --vp-c-bg: #2e3440;
+  --vp-c-bg-alt: #2e3440;
+  --vp-c-bg-elv: #3b4252;
+  --vp-c-bg-soft: #3b4252;
+
+  --vp-c-text-1: #d8dee9;
+  --vp-c-text-2: #b7bcc3;
+  --vp-c-text-3: #b9bec6;
+
+  --vp-c-divider: #474f61;
+}
+
+.vp-doc a {
+  text-decoration: none;
+}
+
+/**
+ * Global
+ * -------------------------------------------------------------------------- */
+
+body {
+  text-spacing-trim: space-all;
+  font-family: "Zen Maru Gothic", var(--vp-font-family-base);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-3);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+
+  --vp-button-alt-bg: #fff;
+  --vp-button-alt-hover-bg: var(--vp-c-default-3);
+}
+
+.dark {
+  --vp-button-alt-bg: var(--vp-c-default-3);
+  --vp-button-alt-hover-bg: var(--vp-c-default-2);
+}
+
+.VPButton {
+  user-select: none;
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--vp-c-brand-2) 30%,
+    var(--vp-c-brand-3)
+  );
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--vp-c-brand-2) 50%,
+    var(--vp-c-brand-3) 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+
+  .VPContent.is-home {
+    padding-top: calc(var(--vp-nav-height) * 2.5);
+  }
+
+  .VPImage.image-src {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .image-container .image-bg {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.VPHero.has-image .container {
+  gap: 36px;
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-text: var(--vp-c-text-1);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
+  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+/**
+ * Component: NavBar
+ * -------------------------------------------------------------------------- */
+
+.VPNavBarMenuLink.active, .VPNavScreenMenuLink:hover {
+  color: var(--vp-c-brand-3) !important;
+}
+
+/**
+ * Component: Hero
+ * -------------------------------------------------------------------------- */
+.VPHero .tagline {
+  color: var(--vp-c-text-1);
+}
+
+/**
+ * Component: h
+ * -------------------------------------------------------------------------- */
+.VPDoc h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 32px;
+    background-color: var(--vp-c-divider);
+    border-radius: 12px;
+  }
+}
+
+.VPDoc h4 {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 16px;
+}
+
+.VPDoc h5 {
+  margin-top: 16px;
+}
