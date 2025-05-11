@@ -41,6 +41,7 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(footnote)
+      md.use(mark)
     }
   },
   vite: {
