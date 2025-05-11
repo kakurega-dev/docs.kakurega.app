@@ -12,8 +12,20 @@ export const pageParents = [{
 }, {
   path: 'docs/news',
   text: 'お知らせ',
+  description: '隠れ家からの重要なお知らせです',
   icon: 'bell',
   reverse: true,
+}, {
+  path: 'references',
+  text: 'リファレンス',
+  description: '隠れ家フォークに関するリファレンスです',
+  icon: 'brackets-angle',
+  exclude: 'admin',
+}, {
+  path: 'references/admin',
+  text: '運営者向け',
+  description: '隠れ家フォーク版のMisskeyを使用して運営している方向けのドキュメントです',
+  icon: 'shield',
 }]
 
 // https://vitepress.dev/reference/site-config
