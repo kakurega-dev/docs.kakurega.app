@@ -1,11 +1,16 @@
 <template>
     <div :class="$style.root">
         <template v-for="(articles, i) in pages" :key="i">
-            <div :class="$style.title">
-                <div v-if="articles.icon" :class="$style.icon">
-                    <i :class="`ti ti-${articles.icon}`"></i>
+            <div :class="$style.header">
+                <div :class="$style.title">
+                    <div v-if="articles.icon" :class="$style.icon">
+                        <i :class="`ti ti-${articles.icon}`"></i>
+                    </div>
+                    {{ articles.title }}
                 </div>
-                {{ articles.title }}
+                <div v-if="articles.description" :class="$style.description">
+                    {{ articles.description }}
+                </div>
             </div>
             <div :class="$style.container">
                 <HomeCard v-for="(card, j) in articles.contents" :key="j" :link="card.url" :title="card.title"
@@ -33,6 +38,12 @@ const pages = data[props.parent]
     gap: 24px;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .title {
     display: flex;
     gap: 12px;
@@ -50,6 +61,10 @@ const pages = data[props.parent]
     flex-direction: column;
     flex-wrap: wrap;
     gap: 16px;
+}
+
+.description {
+    font-size: 0.9rem;
 }
 
 .card {

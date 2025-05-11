@@ -5,6 +5,7 @@ export type PageMetadata = {
     [root: string]: {
         title: string
         icon?: string
+        description?: string
         contents: {
             title: string
             url: string
@@ -42,6 +43,7 @@ export async function getPageData() {
         results[parentPath].push({
             title: root.text,
             icon: root.icon,
+            description: root.description,
             contents: (await contents.load()).map((x) => {
                 return {
                     title: x.frontmatter.title,
