@@ -1,6 +1,20 @@
 import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
+import { generateSidebar } from 'vitepress-sidebar'
 import footnote from 'markdown-it-footnote'
+import mark from 'markdown-it-mark'
+
+export const pageParents = [{
+  path: 'docs',
+  text: 'ドキュメント',
+  icon: 'book-2',
+  exclude: 'news',
+}, {
+  path: 'docs/news',
+  text: 'お知らせ',
+  icon: 'bell',
+  reverse: true,
+}]
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -18,20 +32,7 @@ export default defineConfig({
       { text: 'リファレンス', link: '/references'}
     ],
 
-    sidebar: {
-      '/docs': [
-        {
-          text: 'ドキュメント',
-          base: '/docs',
-          items: [
-            { text: '利用規約', link: '/terms-of-service' },
-            { text: 'プライバシーポリシー', link: '/privacy-policy' },
-            { text: '創作物に関するガイドライン', link: '/creation-guidelines' },
-            { text: 'コミュニティガイドライン', link: '/community-guidelines' },
-          ]
-        }
-      ]
-    },
+    sidebar: defineSidebar(),
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
@@ -46,7 +47,44 @@ export default defineConfig({
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./theme/components', import.meta.url)),
+        '@@': fileURLToPath(new URL('./', import.meta.url)),
       },
     },
   }
 })
+
+function defineSidebar() {
+  const defaultOptions = {
+    documentRootPath: 'pages',
+    useTitleFromFrontmatter: true,
+    frontmatterTitleFieldName: 'sidebar',
+    sortMenusByFrontmatterOrder: true,
+    collapsed: null,
+  }
+
+  const sidebarOptions = pageParents.map((x) => {
+    const generated = generateSidebar({
+      ...defaultOptions,
+      basePath: `/${x.path}`,
+      scanStartPath: `/${x.path}`,
+      rootGroupText: x.text,
+      sortMenusOrderByDescending: x.reverse,
+      ...(x.exclude ? { excludePattern: [x.exclude] } : {}),
+    })
+
+    if (!Array.isArray(generated) || generated.length === 0) throw new Error('invalid sidebar generated')
+
+    return {
+      root: `/${x.path.split('/').slice(0, 1).join('')}`,
+      item: generated[0],
+    }
+  })
+
+  const result = {} as { [path: string]: DefaultTheme.SidebarItem[] }
+  sidebarOptions.forEach((x) => {
+    if (!(x.root in result)) result[x.root] = []
+    result[x.root].push(x.item)
+  })
+
+  return result
+}

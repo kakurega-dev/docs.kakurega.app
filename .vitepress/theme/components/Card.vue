@@ -1,13 +1,17 @@
 <template>
     <VPLink :class="[$style.root, { [$style.lightMode]: props.lightMode }]" :href="props.link">
-        <div :class="$style.container">
-            <div v-if="props.icon" :class="$style.icon">
-                <i :class="`ti ti-${props.icon}`"></i>
+        <div :class="$style.wrapper">
+            <div :class="$style.container">
+                <div v-if="props.icon" :class="$style.icon">
+                    <i :class="`ti ti-${props.icon}`"></i>
+                </div>
+                <div :class="$style.title">{{ props.title }}</div>
             </div>
-            <div :class="$style.title">{{ props.title }}</div>
+            <p v-if="props.description" :class="$style.description">{{ props.description }}</p>
+            <div v-if="!props.lightMode" :class="$style.open">{{ props.title }}を開く <i :class="`ti ti-arrow-right`"></i>
+            </div>
         </div>
-        <p v-if="props.description" :class="$style.description">{{ props.description }}</p>
-        <div v-if="!props.lightMode" :class="$style.open">{{ props.title }}を開く <i :class="`ti ti-arrow-right`"></i></div>
+        <i v-if="props.lightMode" :class="$style.chevron" class="ti ti-chevron-right"></i>
     </VPLink>
 </template>
 
@@ -29,15 +33,19 @@ const props = defineProps<{
     --active-color-bg: rgba(from var(--active-color) r g b / 0.1);
 
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 24px;
     border: 2px solid var(--vp-c-bg-soft);
     border-radius: 12px;
     background-color: var(--vp-c-bg-soft);
     transition: border-color 0.25s, background-color 0.25s, color 0.25s !important;
     min-width: 400px;
-    gap: 24px;
+    gap: 12px;
+
+    .chevron {
+        font-size: 1.5rem;
+        color: var(--active-color);
+    }
 
     &:hover {
         border-color: var(--vp-c-brand-3);
@@ -45,11 +53,23 @@ const props = defineProps<{
     }
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    flex-grow: 1;
+}
+
 .lightMode {
     &.root {
         min-width: 0;
         padding: 12px;
+    }
+
+    .wrapper {
         justify-content: center;
+        gap: 6px;
     }
 
     .container {
@@ -63,6 +83,13 @@ const props = defineProps<{
 
     .title {
         font-size: 1rem;
+    }
+
+    .description {
+        margin: 0;
+        line-height: unset;
+        font-weight: 400;
+        font-size: 0.9rem;
     }
 }
 
