@@ -73,10 +73,10 @@
   --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
 
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+  --vp-c-warning-1: #ecb637;
+  --vp-c-warning-2: #eec668;
+  --vp-c-warning-3: #eccc81;
+  --vp-c-warning-soft: #eec668;
 
   --vp-c-danger-1: var(--vp-c-red-1);
   --vp-c-danger-2: var(--vp-c-red-2);
@@ -105,6 +105,16 @@
   --vp-c-text-3: #b9bec6;
 
   --vp-c-divider: #474f61;
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: #a64e57;
+  --vp-c-danger-2: #b85b64;
+  --vp-c-danger-3: #bf616a;
+  --vp-c-danger-soft: rgba(from var(--vp-c-danger-3) r g b / 0.15);
 }
 
 .vp-doc a {
@@ -120,6 +130,12 @@ body {
   font-family: "Zen Maru Gothic", var(--vp-font-family-base);
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+mark {
+  background-color: unset;
+  color: var(--vp-c-danger-3);
+  border-bottom: 1px dashed var(--vp-c-danger-3);
 }
 
 /**
@@ -209,6 +225,11 @@ body {
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+}
+
+.custom-block.warning {
+  background-color: rgba(from var(--vp-c-warning-1) r g b / 0.2);
+  color: var(--vp-c-text-1);
 }
 
 /**

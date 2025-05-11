@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import Card from '../components/Card.vue'
+import Card from '@/Card.vue'
 
 type HomeCards = {
     title: string
@@ -28,7 +28,7 @@ const homeCards: HomeCards = [
     {
         link: '/docs',
         title: 'ドキュメント',
-        icon: 'notebook',
+        icon: 'book-2',
         description: '利用規約をはじめとする、サービスとしての隠れ家に関するドキュメントです。',
     }, {
         link: '/references',

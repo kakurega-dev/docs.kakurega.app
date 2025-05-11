@@ -24,6 +24,7 @@ export default defineConfig({
   srcDir: 'pages',
   outDir: 'dist',
   cleanUrls: true,
+  head: [['link', { rel: 'icon', href: '/assets/logo.svg' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -35,8 +36,12 @@ export default defineConfig({
     sidebar: defineSidebar(),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/hideki0403/kakurega.app' }
     ]
+  },
+  transformPageData: (pageData, ctx) => {
+    pageData.frontmatter.next = false
+    pageData.frontmatter.prev = false
   },
   markdown: {
     config: (md) => {
