@@ -47,6 +47,10 @@ export default defineConfig({
     config: (md) => {
       md.use(footnote)
       md.use(mark)
+    },
+    theme: {
+      light: 'one-light',
+      dark: 'one-dark-pro'
     }
   },
   vite: {
