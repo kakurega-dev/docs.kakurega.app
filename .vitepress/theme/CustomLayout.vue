@@ -6,6 +6,9 @@
         <template #not-found>
             <NotFound />
         </template>
+        <template #doc-before>
+            <DocsHeader />
+        </template>
     </DefaultTheme.Layout>
 </template>
 
@@ -13,4 +16,5 @@
 import DefaultTheme from 'vitepress/theme'
 import NotFound from './layouts/NotFound.vue'
 import Home from './layouts/Home.vue'
+import DocsHeader from './layouts/DocsHeader.vue'
 </script>
