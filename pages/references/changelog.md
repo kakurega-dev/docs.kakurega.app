@@ -8,6 +8,15 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.41.0" date="2025/05/14" base="2025.5.0" />
+
+### 新機能/機能改善
+- 「ファイル付きのみ」が有効になっている場合はタイムライン上部にメッセージを表示するように
+- (サーバー運営者向け) BackendのSentryでMisskeyのバージョン情報とEnvironmentを送信するように
+
+### 変更
+- 更新情報のリンク先をドキュメント移行先に変更
+
 <Version v="1.40.4" date="2025/04/17" base="2025.4.0" />
 
 ### 修正
