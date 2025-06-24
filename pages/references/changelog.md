@@ -8,6 +8,11 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.42.2" date="2025/06/24" base="2025.6.3" />
+
+### 修正
+- 「リアクション数の非表示」機能が有効になっている場合に、タイムライン上のノートにリアクションが表示されなくなる問題を修正
+
 <Version v="1.42.1" date="2025/06/23" base="2025.6.3" />
 
 ::: info お知らせ
