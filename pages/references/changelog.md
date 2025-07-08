@@ -8,6 +8,11 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.42.3" date="2025/07/08" base="2025.6.3" />
+
+### 修正
+- ドライブ等で「もっと見る」ボタンが機能しないことがある問題を修正
+
 <Version v="1.42.2" date="2025/06/24" base="2025.6.3" />
 
 ### 修正
