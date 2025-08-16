@@ -1,0 +1,5 @@
+{
+    "markdown.copyFiles.destination": {
+        "/pages/**/*": "/pages/public/assets/images/${documentRelativeDirName/^\\/pages\\/(.*)/$2/}/${documentBaseName}/${unixTime}.${fileExtName}"
+    }
+}
