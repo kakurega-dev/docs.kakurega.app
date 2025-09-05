@@ -62,3 +62,15 @@ git checkout master-kakurega
 git pull
 sudo docker compose stop && sudo docker compose up -d
 ```
+
+::: info アップデートに失敗する場合
+もし`docker compose`でイメージの取得に失敗する場合は、以下のように`docker-compose.yml`内のイメージ名を修正してみてください。
+```yaml
+services:
+  web:
+    build: .
+    image: ghcr.io/hideki0403/kakurega.app:latest # [!code --]
+    image: ghcr.io/kakurega-dev/kakurega.app:latest # [!code ++]
+    restart: always
+```
+:::
