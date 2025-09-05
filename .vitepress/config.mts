@@ -48,7 +48,7 @@ export default defineConfig({
     sidebar: defineSidebar(),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/hideki0403/kakurega.app' }
+      { icon: 'github', link: 'https://github.com/kakurega-dev/kakurega.app' }
     ]
   },
   transformPageData: (pageData, ctx) => {

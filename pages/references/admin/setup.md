@@ -23,7 +23,7 @@ order: 0
 
 ```bash
 sudo -iu misskey
-git clone --recursive https://github.com/hideki0403/kakurega.app.git
+git clone --recursive https://github.com/kakurega-dev/kakurega.app.git
 cd kakurega.app
 git checkout master-kakurega
 git submodule update --init
@@ -99,7 +99,7 @@ DockerおよびDocker Composeがインストールされていることを前提
 ### 1. リポジトリのクローン
 
 ```bash
-git clone -b master-kakurega https://github.com/hideki0403/kakurega.app.git
+git clone -b master-kakurega https://github.com/kakurega-dev/kakurega.app.git
 cd kakurega.app
 git checkout master-kakurega
 ```
