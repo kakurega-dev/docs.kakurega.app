@@ -8,6 +8,16 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.44.3" date="2025/11/03" base="2025.10.2" />
+
+### 修正
+- リモートの絵文字経由でのリアクション (便乗リアクション) が行えない不具合を修正
+- Unicode絵文字でのリアクションが行えない不具合を修正
+
+### 機能改善
+便乗リアクションが可能な絵文字をリアクションした際に、対象のリアクションに表示される破線がアクセントカラーになるように  
+![alt text](../public/assets/images/pages/references/changelog/1762160662655.png)  
+  
 <Version v="1.44.2" date="2025/10/30" base="2025.10.2" />
 
 ### 変更
