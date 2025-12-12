@@ -8,6 +8,12 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.44.4" date="2025/12/12" base="2025.12.0" />
+
+### 修正
+- ページを正常に読み込めないことがある問題を改善
+  - [misskey-dev/misskey#16952](https://github.com/misskey-dev/misskey/pull/16952) をcherry-pick
+
 <Version v="1.44.3" date="2025/11/03" base="2025.10.2" />
 
 ### 修正
