@@ -8,6 +8,12 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.44.5" date="2026/03/11" base="2026.3.0" />
+
+### 変更
+- Misskey 2026.3.0をマージ
+- カスタムフォントにIBM Plex Sans JPとLINE Seed JPを追加
+
 <Version v="1.44.4" date="2025/12/12" base="2025.12.0" />
 
 ### 修正
