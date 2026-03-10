@@ -8,6 +8,11 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.44.6" date="2026/03/11" base="2026.3.1" />
+
+### 修正
+- ビルドに失敗する問題を修正
+
 <Version v="1.44.5" date="2026/03/11" base="2026.3.0" />
 
 ### 変更
