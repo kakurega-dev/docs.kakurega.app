@@ -8,6 +8,15 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.44.7" date="2026/05/03" base="2026.5.0" />
+
+### 修正
+- 一部の条件下で、ドライブの「このファイルからノートを作成」が機能しない問題を修正
+
+### 機能改善
+- ドライブで「このファイルからノートを作成」をする時、下書きがある場合に下書きにファイルを追加するか、新たにノートを作成するかを選択できるように
+![alt text](../public/assets/images/pages/references/changelog/1777787987967.png)
+
 <Version v="1.44.6" date="2026/03/11" base="2026.3.1" />
 
 ### 修正
