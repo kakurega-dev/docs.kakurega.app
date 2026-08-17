@@ -8,6 +8,11 @@ order: 0
 import Version from '@/VersionTitle.vue'
 </script>
 
+<Version v="1.44.9" date="2026/08/17" base="2026.7.0" />
+
+### 変更
+- ハードワードミュートの移行機能を削除
+
 <Version v="1.44.8" date="2026/07/17" base="2026.6.0" />
 
 ### 修正
